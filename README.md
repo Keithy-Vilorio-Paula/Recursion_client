@@ -2,14 +2,24 @@
 
 Parte cliente del proyecto 
 
-El algoritmo aplicado en la función BuscarPacienteRecursivo se encarga de buscar pacientes cuyos nombres coincidan con un prefijo dado de manera eficiente en una lista ordenada de pacientes. Aquí está cómo funciona el algoritmo:
+La parte del cliente es la interfaz a través de la cual los usuarios interactúan con el sistema médico. Está implementada como una aplicación de consola que permite realizar diversas operaciones como hacer citas, ver citas, buscar pacientes, registrar nuevos pacientes y modificar/cancelar citas.
 
- El algoritmo utiliza un enfoque de "divide y vencerás" para buscar en la lista de pacientes. En cada iteración, divide la lista en mitades y busca en la mitad correcta basándose en el valor del nombre del paciente en el punto medio de la lista.
+Aquí hay una descripción de las funciones principales en la parte del cliente:
 
-Recursión: La función BuscarPacienteRecursivo es recursiva. Comienza con una llamada inicial pasando la lista completa de pacientes. Luego, en cada paso recursivo, divide la lista en mitades y realiza la búsqueda solo en una de las mitades, basándose en si el nombre del paciente en el punto medio de la lista es menor o mayor que el prefijo dado.
+Conexión WebSocket: El cliente se conecta al servidor a través de un WebSocket para enviar y recibir mensajes.
 
-Ordenamiento de la lista: Antes de realizar la búsqueda, la lista de pacientes se ordena alfabéticamente. Esto permite que el algoritmo realice búsquedas eficientes utilizando una técnica conocida como "búsqueda binaria".
+Menú de opciones: El cliente muestra un menú de opciones en la consola, donde el usuario puede seleccionar la operación que desea realizar.
 
-Comparación de prefijos: En cada paso recursivo, el algoritmo compara el prefijo dado con el nombre del paciente en el punto medio de la lista. Si el nombre del paciente comienza con el prefijo dado, se agrega a la lista de resultados.
+Interacción con el usuario: El cliente solicita información al usuario según la operación seleccionada. Por ejemplo, al hacer una cita, solicita el nombre, cédula y número de teléfono del paciente.
 
-Ordenación de los resultados: Después de encontrar todas las coincidencias, la lista de resultados se ordena alfabéticamente utilizando el método Sort(). Esto garantiza que los resultados devueltos estén en orden alfabético.
+Envío de mensajes al servidor: Una vez que el usuario proporciona la información requerida, el cliente envía un mensaje al servidor a través del WebSocket para realizar la operación correspondiente.
+
+Recepción de respuestas del servidor: Después de enviar un mensaje al servidor, el cliente espera y recibe una respuesta del servidor a través del WebSocket. Esta respuesta se muestra en la consola para informar al usuario sobre el resultado de la operación.
+
+En resumen, la parte del cliente actúa como la interfaz de usuario del sistema médico, permitiendo a los usuarios realizar diversas operaciones a través de una interfaz de consola simple y enviar mensajes al servidor para llevar a cabo estas operaciones.
+
+
+
+
+
+
